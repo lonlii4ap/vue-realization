@@ -1,5 +1,5 @@
 # vue-realization
- implement the vue process  step by step
+ implement the vue && webpack process use step by step
 
 ## 1.introduction
 libs or frameworks
@@ -10,5 +10,6 @@ vue belongs to the framework
 mvc: View => Controller => Model
 mvvm: View <=> viewModel <=> Model
 
+### 3.webpack
 
 

@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack-dev-server --env=development",
     "dev:build": "webpack --env=development",
-    "build": "webpack --env=production"
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
