@@ -55,3 +55,41 @@ npm install webpack webpack-cli --save-dev
 Execute 'NPM run build'. Node will be called by default_ The 'webback' command under modules /. Bin 'will internally call' webback cli 'to resolve user parameters for packaging. Default to ` SRC/ index.js `As an entry file.
 
 We can find that the 'dist' directory has been generated. This directory is the result of final packaging. ` main.js `It can be directly referenced in HTML, and we will be prompted that the default 'mode' is' production '`
+
+### 3.2 webpack.config.js
+
+```javascript
+const path = require('path');
+module.exports = {
+    entry:'./src/index.js',
+    output:{
+        filename:'bundle.js', // 打包出的结果文件
+        path:path.resolve(__dirname,'dist') // 打包到dist目录下
+    }
+}
+```
+
+
+### 3.3 configure packaged mode
+
+We need to provide the 'mode' attribute during packaging to distinguish between development environment and production environment, so as to split the configuration file
+
+```bash
+├── build
+│   ├── webpack.base.js
+│   ├── webpack.dev.js
+│   └── webpack.prod.js
+```
+You can use the 'config' parameter to specify which configuration file to use for packaging
+
+**Distinguish by env parameter**
+
+```json
+"scripts": {
+    "build": "webpack --env.production --config ./build/webpack.base",
+    "dev": "webpack --env.development --config ./build/webpack.base"
+}
+```
+
+Transformation` webpack.base `The file exports the function by default, passing the environment variable into the function's parameters
+
