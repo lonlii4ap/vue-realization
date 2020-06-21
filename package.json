@@ -4,7 +4,7 @@
   "description": "implement the vue && webpack process use step by step",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --env.development --config ./build/webpack.base.js",
+    "dev": "webpack-dev-server --env.development --config ./build/webpack.base.js",
     "build": "webpack --env.production --config ./build/webpack.base.js"
   },
   "repository": {
@@ -19,7 +19,13 @@
   },
   "homepage": "https://github.com/lonlii4ap/vue-realization#readme",
   "devDependencies": {
+    "html-webpack-plugin": "^4.3.0",
     "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^4.2.2"
+  },
+  "dependencies": {
+    "jquery": "^3.5.1"
   }
 }

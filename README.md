@@ -85,9 +85,11 @@ You can use the 'config' parameter to specify which configuration file to use fo
 **Distinguish by env parameter**
 
 ```json
-"scripts": {
+{
+ "scripts": {
     "build": "webpack --env.production --config ./build/webpack.base",
     "dev": "webpack --env.development --config ./build/webpack.base"
+ }
 }
 ```
 
