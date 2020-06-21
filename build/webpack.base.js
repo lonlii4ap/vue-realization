@@ -9,7 +9,7 @@ const base = {
         index: path.resolve(__dirname,'../src/index.js')
     },
     output: {
-        filename: '[name].js',
+        filename: '[name].[hash].js',
         path: path.resolve(__dirname,'../lib')
     },
     plugins:[
