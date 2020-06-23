@@ -12,6 +12,14 @@ const base = {
         filename: '[name].[hash].js',
         path: path.resolve(__dirname,'../lib')
     },
+    module:{
+        rules: [
+            {
+                test: /\.css$/,
+                use: ['style-loader','css-loader']
+            }
+        ]
+    },
     plugins:[
         new HtmlWebpackPlugin({
             filename: 'index.html',
