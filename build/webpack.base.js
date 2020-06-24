@@ -21,8 +21,24 @@ module.exports = (env) => {
                     test: /\.css$/,
                     use: [
                         !isDev && MiniCssExtractPlugin.loader,
-                        isDev && 'style-loader','css-loader'
+                        isDev && 'style-loader',
+                        {
+                            loader:"css-loader",
+                            options:{
+                                importLoaders:1 // 引入的文件需要调用sass-loader来处理
+                            }
+                        },
+                        "sass-loader",
                        ].filter(Boolean)
+                },
+                {
+                    test: /.\scss$/,
+                    use: [
+                        !isDev && MiniCssExtractPlugin.loader,
+                        isDev && 'style-loader',
+                        'css-loader',
+                        'sass-loader'
+                    ].filter(Boolean)
                 }
             ]
         },
